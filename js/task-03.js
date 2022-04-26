@@ -15,10 +15,12 @@ const images = [
 
 const imagesEl = document.querySelector(".gallery");
 
-const imageList = images.map(
-  ({ url, alt }) =>
-    `<li><img src='${url}' alt='${alt}' width='300px' height='200'></li>`
-);
+const imageList = images
+  .map(
+    ({ url, alt }) =>
+      `<li><img src='${url}' alt='${alt}' width='300px' height='200'></li>`
+  )
+  .join("");
 imagesEl.insertAdjacentHTML("afterbegin", imageList);
 
 imagesEl.classList.add("flex-box-img");

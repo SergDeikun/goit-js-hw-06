@@ -3,10 +3,12 @@ const refs = {
   span: document.querySelector("#name-output"),
 };
 
-document.querySelector("#name-input").placeholder = "Anonymous";
-
 refs.input.addEventListener("input", handlerInputChange);
 
 function handlerInputChange(event) {
   refs.span.textContent = event.currentTarget.value;
+
+  if (event.currentTarget.value === "") {
+    refs.span.textContent = "Anonymous";
+  }
 }

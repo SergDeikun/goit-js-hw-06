@@ -11,18 +11,14 @@ function hendleFormSubmit(event) {
   const formEmail = formElements.email.value;
   const formPassword = formElements.password.value;
 
-  if (formEmail === "") {
-    alert("please enter your email");
-  }
-  if (formPassword === "") {
-    alert("please enter your password");
+  if (formEmail === "" || formPassword === "") {
+    alert("Please fill in all fields");
   } else {
     const formData = {
       formEmail,
       formPassword,
     };
     console.log(formData);
+    refs.form.reset();
   }
-
-  refs.form.reset();
 }
